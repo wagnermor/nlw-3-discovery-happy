@@ -1,9 +1,9 @@
 // Create map
-const mymap = L.map('mapid').setView([-23.5231, -46.8072], 15);
+const mymap = L.map('mapid').setView([-23.5231, -46.8072], 16);
 
 // Create and add tilelayer
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    // attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     // id: 'mapbox/streets-v11', /*Linha para street map */
     id: 'mapbox/satellite-v9', /* linha para satelite map */
@@ -27,7 +27,7 @@ const popup = L.popup({
     className: 'map-popup',
     minWidth: 240,
     minHeight: 240
-}).setContent("Lar das meninas <a href='orphanage.html?id=1' class='choose-orphnage'> <img src='./public/images/arrow-white.svg'> </a>")
+}).setContent("Lar das crianças <a href='orphanage.html?id=1' class='choose-orphnage'> <img src='./public/images/arrow-white.svg'> </a>")
 
 // Create and add marker
 var marker = L
