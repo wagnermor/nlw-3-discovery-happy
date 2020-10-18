@@ -11,7 +11,6 @@ const mymap = L.map('mapid', options).setView([-23.5231, -46.8072], 16);
 
 // Create and add tilelayer
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    // attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     // id: 'mapbox/streets-v11', /*Linha para street map */
     id: 'mapbox/satellite-v9', /* linha para satelite map */
@@ -33,3 +32,25 @@ const icon = L.icon({
 var marker = L
 .marker([-23.5231, -46.8072], { icon })
 .addTo(mymap)
+
+/* image galery */
+function selectImage(event) {
+    const button = event.currentTarget;
+
+    // remover todas as classes .active
+    const buttons = document.querySelectorAll(".images button");
+    buttons.forEach(removeActiveClass)
+
+    function removeActiveClass(button) {
+        button.classList.remove(".active");
+    }
+
+    // selecionar a imagem clicada
+    const image = button.children[0]
+    const imageContainer = document.querySelector(".orphanage-details > img")
+
+    // atualizar o container de imagem
+    imageContainer.src = image.src
+    // adicionar a classe .active para este botao
+    button.classList.add('active')
+}
